@@ -1,4 +1,5 @@
 COMMAND:=theapp
+NPMBIN:=`npm bin`
 
 build:
 	go build -o $(COMMAND)
@@ -8,3 +9,6 @@ test: $(COMMAND)
 
 run:
 	make build && make test
+
+codecheck:
+	$(NPMBIN)/codecheck
