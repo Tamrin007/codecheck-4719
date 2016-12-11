@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strconv"
 
 	"github.com/joho/godotenv"
 	jsonpointer "github.com/mattn/go-jsonpointer"
@@ -20,7 +21,7 @@ type request struct {
 
 type response struct {
 	Name  string `json:"name"`
-	Count string `json:"count"`
+	Count int    `json:"count"`
 }
 
 func (r *request) toJSON(b []byte, keyword string) ([]byte, error) {
@@ -30,13 +31,15 @@ func (r *request) toJSON(b []byte, keyword string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	count, err := jsonpointer.Get(respJSON, "/response/result/numFound")
 	if err != nil {
 		return nil, err
 	}
-
-	result, err := json.Marshal(response{keyword, count.(string)})
+	count, err = strconv.Atoi(count.(string))
+	if err != nil {
+		return nil, err
+	}
+	result, err := json.Marshal(response{keyword, count.(int)})
 	if err != nil {
 		return nil, err
 	}
