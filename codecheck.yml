@@ -1,4 +1,6 @@
 build:
+- go get github.com/joho/godotenv
+- go get github.com/mattn/go-jsonpointer
 - go build -o theapp
 env:
   APP_COMMAND: ./theapp

@@ -1,0 +1,16 @@
+{
+	"ImportPath": "github.com/Tamrin007/codecheck-4719",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v75",
+	"Deps": [
+		{
+			"ImportPath": "github.com/joho/godotenv",
+			"Comment": "v1-10-g4ed1339",
+			"Rev": "4ed13390c0acd2ff4e371e64d8b97c8954138243"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-jsonpointer",
+			"Rev": "87adb015833b9f09fef7277d86b7635bd2070ede"
+		}
+	]
+}
