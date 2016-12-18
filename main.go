@@ -24,6 +24,7 @@ type response struct {
 	Count int    `json:"count"`
 }
 
+// toJSON formats search of result
 func (r *request) toJSON(b []byte, keyword string) ([]byte, error) {
 	var respJSON interface{}
 
@@ -47,6 +48,7 @@ func (r *request) toJSON(b []byte, keyword string) ([]byte, error) {
 	return result, nil
 }
 
+// search articles from API
 func (r *request) search(keyword string) (*http.Response, error) {
 	values := url.Values{}
 	values.Add("ackey", r.Ackey)
@@ -62,6 +64,7 @@ func (r *request) search(keyword string) (*http.Response, error) {
 	return resp, nil
 }
 
+// GetPopularity returns most popular article
 func (r *request) GetPopularity() (string, error) {
 	var result []byte
 	var results [][]byte
@@ -85,8 +88,10 @@ func (r *request) GetPopularity() (string, error) {
 }
 
 func main() {
+	// Get ACKEY from environmental variable
 	godotenv.Load()
 	ackey := os.Getenv("ACKEY")
+
 	req := request{ackey, os.Args[1:]}
 	result, err := req.GetPopularity()
 	if err != nil {
