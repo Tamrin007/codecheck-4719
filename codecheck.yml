@@ -1,7 +1,3 @@
-build:
-  - go get github.com/joho/godotenv
-  - go get github.com/mattn/go-jsonpointer
-  - go build -o theapp
 env:
-  APP_COMMAND: ./theapp
-test: mocha
+  APP_COMMAND: node index.js
+test: mocha -t 6000

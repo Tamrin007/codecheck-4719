@@ -20,11 +20,12 @@
 CLIの実装方法については[指定言語].mdを参照ください。
 使用可能な言語は
 
-- nodejs
-- ruby
-- java
-- go
-- python
+- NodeJS
+- Ruby
+- Java
+- Go
+- Python2
+- Python3
 
 のいずれかです。
 
@@ -42,10 +43,10 @@ CLIの実装方法については[指定言語].mdを参照ください。
 ```
 
 ##### 朝日新聞アーカイブ記事API
-朝日新聞アーカイブ記事APIの利用方法は[Asahi-News-Archives-API-instructions.md](./Asahi-News-Archives-API-instructions.md)で確認ください。
+朝日新聞アーカイブ記事APIの利用方法は`Asahi-News-Archives-API-instructions.md`で確認ください。
 
 ## answer.md
-[answer.md](./answer.md)を用意してあるので、その中に
+`answer.md`を用意してあるので、その中に
 - どのように実装したか、工夫した点は何か
 - 発生した問題、難しかった箇所
 - それをどのようにして対処したのか
